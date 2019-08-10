@@ -1,0 +1,48 @@
+<!--pages/show/show.wxml-->
+<i-message id="message" />
+<block wx:if = "{{info.img}}">
+  <image class = "a title" src="{{url + info.img}}"/>
+  <view class = "a text">{{info.title}}
+  </view>
+  <view class = "a b">
+    <view class = "left">{{"￥" + info.price}}</view>
+    <view class = "right">{{"分数：" + info.point}}</view>
+  </view>
+  <view class = "a content">
+    {{info.content}}
+  </view>
+  <view class = "a tagsArea">
+    <view class = "tags f" wx:for = "{{info.tags}}" wx:key = "{{item}}">
+      {{item}}
+    </view>
+  </view>
+  <view class = "a parting" bindtap='addComment'>
+    评论（{{info.comment.length}}）
+  </view> 
+  <view class = "a" wx:for = "{{info.comment}}" wx:key = "{{item}}">
+    <view>
+      {{item.writer + ":"}}
+    </view>
+    <view class = "commentContent">
+      {{"  " + item.content}}
+    </view>
+  </view>
+  <view class = "zw"></view>
+  <view class = "footer">
+    <view class = "f addComment" bindtap = "addComment">
+      <i-icon type="interactive" size = "30"/>
+      <view>评论</view>
+    </view>
+    <view class= "f ff addShoppingCart" bindtap = "addShoppingCart">
+      加入购物车
+    </view>
+    <view class = "f ff buy" bindtap = "buyNow">
+      立即购买
+    </view>
+  </view>
+</block>
+<i-modal title="添加评论" visible="{{ visible }}" bind:ok="handleSubmit" bind:cancel="handleClose">
+  <view class = "commentArea">
+    <textarea class = "comment" auto-height = "true" bindinput = 'setComment' auto-focus = "true" value = "{{comment}}" disabled='{{!visible}}'/>
+  </view> 
+</i-modal>

@@ -1,0 +1,59 @@
+<i-message id="message" />
+<view class = "all" wx:for = "{{items}}" wx:key = "{{item}}">
+  <view class = "name">
+    <text style = "color: red">*</text>
+    {{item}}
+  </view>
+  <block wx:if = "{{item === '商品类别'}}">
+    <checkbox-group bindchange="checkboxChange">
+      <view 
+        class="checkbox" 
+        wx:for="{{categorys}}" 
+        wx:key = "{{item}}">
+        <checkbox 
+          checked = "{{check[index]}}" 
+          value = "{{item}}"/>{{item}}
+      </view>
+    </checkbox-group>
+  </block>
+  <block wx:elif = "{{item === '商品图'}}">
+    <block wx:if = "{{tempFilePaths || info.img}}">
+      <image 
+        class = "smallImg" 
+        src='{{tempFilePaths || url + info.img}}' 
+        bindtap='delImg' />
+      点击图片删除
+    </block>
+    <view class = "upload" bindtap = 'upload'>
+      <i-icon type="add" size = "20"/>
+      上传图片
+    </view>
+  </block>
+  <block wx:elif = "{{item === '商品描述'}}">
+    <view>最大长度140个字</view>
+    <textarea 
+      value = "{{info[names[index]]}}"
+      class = "aaa bbb" 
+      bindinput = 'inputChange' 
+      data-index = "{{index}}" 
+      auto-height />  
+  </block>
+  <block wx:elif = "{{item === '商品标题'}}">
+    <input 
+      value = "{{info[names[index]]}}"
+      class = "aaa" 
+      bindblur = 'inputChange' 
+      data-index = "{{index}}"/>
+  </block>
+  <block wx:else>
+    <input 
+      class = "aaa" 
+      type = "digit" 
+      bindblur = 'inputChange' 
+      data-index = "{{index}}"
+      value = "{{info[names[index]]}}"/>
+  </block>
+</view>
+<view class = "all upload" bindtap='handlein'>
+  提交
+</view>

@@ -1,0 +1,46 @@
+/* pages/management/management.wxss */
+page{
+  background-color: #dddedf;
+  padding-top: 10%;
+}
+.a{
+  margin: 0 15% 50rpx 15%;
+
+}
+.avatar{
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+}
+.appName{
+  font-size: 60rpx;
+  float: right;
+  margin-top: 20rpx; 
+}
+.tags{
+  float: left;
+  background-color: #f0dcc1;
+  padding: 6rpx;
+  margin: 4rpx 10rpx;
+  border: 2rpx solid black; 
+  border-radius: 10rpx;
+}
+.tagsArea{
+  background-color: #e4e3e2;
+  height: 250rpx;
+}
+.area{
+  margin: 20rpx;
+  height: 120rpx;
+}
+.right{
+  float: right;
+}
+.area{
+  width: 100%;
+}
+.input{
+  text-align: left;
+  background-color: #ebebeb;
+  padding: 5rpx 20rpx;
+}

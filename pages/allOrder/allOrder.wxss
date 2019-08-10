@@ -1,0 +1,39 @@
+page{
+  background-color: #dee0e3;
+}
+.a{
+  margin: 50rpx 10% 0 10%;
+  border: 2rpx solid black;
+  width: 80%;
+  height: 300rpx;
+}
+.left{
+  float: left
+}
+.imgArea{
+  width: 35%;
+  height: 100%;
+}
+.img{
+  width: 96%;
+  margin: 2%;
+  height: 96%;
+}
+.textArea{
+  width: 65%;
+  height: 100%;
+}
+.title{
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  margin-bottom: 20rpx;
+}
+.r{
+  padding-left: 30rpx; 
+  margin-bottom: 30rpx;
+}
+.bu{
+  background-color: #d1a77a;
+  margin-left: 30rpx;
+}

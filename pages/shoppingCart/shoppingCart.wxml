@@ -1,0 +1,35 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<i-message id="message" />
+<block wx:if = "{{!token}}">
+  <text>请先绑定账号</text>
+</block>
+<block wx:else>
+  <checkbox-group bindchange="checkboxChange">
+    <block wx:for="{{data}}" wx:key = "{{item._id}}">
+      <view class = "b box">
+        <label class="checkbox">
+            <checkbox value="{{index}}" class='check left'/>
+        </label>
+        <view class = "info" bindtap = "jumpTo" data-id="{{item._id}}">
+          <image class = "left img" src = "{{url + item.img}}"/>
+          <view class = "left text">
+            <view class = "content">{{item.title}}</view>
+            <view class = "content ttt">{{item.content}}</view>
+            <view class = "left price">{{"￥:" + item.price}}</view>
+            <view class = "del" catchtap = "del" data-id = "{{item._id}}" data-index = "{{index}}">
+              删除
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </checkbox-group>
+  <view class = "footer">
+    <view>
+      <text class = "font">{{"￥：" + selectMoney}}</text>
+      <view class = "right">
+        购买全部
+      </view>
+  </view>
+  </view>
+</block>

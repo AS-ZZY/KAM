@@ -1,0 +1,109 @@
+/* pages/home/home.wxss */
+page{
+  background-color: #f0f2f5;
+}
+.userInfo-area {
+  padding: 50rpx 0 20rpx 0;
+  height: 180rpx;
+  background-color: #505253;
+  position: relative;
+}
+.userInfo-area::before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  border: 100rpx solid rgba(255, 250, 250, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  left: -50rpx;
+  top: -20rpx;
+}
+.userInfo-area::after{
+  content: "";
+  width: 0px;
+  height: 0px;
+  border: 100rpx solid rgba(255, 250, 250, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: -100rpx;
+  left: 500rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin-bottom: 30rpx 20rpx;
+  border-radius: 50%;
+  float: left;
+}
+.loginButton{
+  text-align: center;
+  margin: 20rpx 20rpx 10rpx 20rpx; 
+  background-color: #989ca0;
+  border-radius: 20rpx; 
+}
+.avatar{
+  float: left;
+  margin: 0 50rpx;
+}
+.userinfo-nickname{
+  margin: 10rpx 0 20rpx 0;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+}
+.names{
+  width: 12%;
+  float: left;
+  height: 100%;
+}
+.tags{
+  float: left;
+  width: 53%;
+  height: 100%;
+}
+.i-tags{
+  float: left;
+  margin: 0 10rpx 10rpx 0;
+  border: 2rpx solid #777;
+  background-color: #FAF0E6;
+  padding: 4rpx 10rpx;
+  border-radius: 20rpx;
+}
+.block{
+  width: 100%;
+  height: 120rpx; 
+  margin-bottom: 20rpx;
+  background-color: #f9fafb;
+}
+.blockitem{
+  text-align: center;
+  width: 30%;
+  float: left;
+  margin-left: 2.5%;
+  height: 100%;
+}
+.blocktext{
+  margin-top: 12rpx; 
+}
+.horizontal{
+  padding: 20rpx 20rpx 0 30rpx; 
+  height: 70rpx;
+  font-size: 18px; 
+  background-color: #f9fafb;
+  margin-bottom: 10rpx;
+}
+.order{
+  width: 100%;
+  height: 120rpx;
+  background-color: #f9fafb;
+  margin-bottom: 40rpx; 
+}
+.orderItem{
+  height: 100%;
+  width: 18%;
+  padding-top: 20rpx;
+  margin: 0 1%; 
+  float: left; 
+  text-align: center;
+  font-size: 30rpx;
+}

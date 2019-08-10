@@ -1,0 +1,40 @@
+<!--pages/page/page.wxml-->
+<view class = "sort">
+  <view 
+    bindtap = 'openSort'
+    class = "left sortItem"
+    data-id="price">
+    价格
+    <i-icon type="unfold" />
+  </view>
+  <view 
+    bindtap = 'openSort'
+    class = "left sortItem"
+    data-id="point">
+    评价
+    <i-icon type="unfold" />
+  </view>
+</view>
+<block wx:if = "{{classificationData.length === 0}}">
+  <view>暂无数据</view>
+</block>
+<view class = "a data" wx:for = "{{classificationData1}}" wx:key = "item.img" bindtap='jumpTo' data-id = "{{item._id}}">
+    <image class = "left img" src = "{{url + item.img}}"></image>
+    <view class = "left right ppp">
+     <view class = "ss">{{item.title}}</view>
+     <view class = "content">{{item.content}}</view>
+     <view class = "left text pos">￥:{{item.price}}</view>
+     <view class = "s text pos2">分数:{{item.point}}</view>
+    </view>
+</view>
+
+<i-action-sheet visible="{{ visible }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel" bind:click="handleClickItem" />
+<view class = "a header">
+  <view class = "f">
+    <i-icon type="search" size = "30" />
+  </view> 
+  <input 
+    bindinput = "searchInput"
+    class = "f search"/>
+  <view class = "f last">{{classificationsText[textId]}}</view>
+</view>

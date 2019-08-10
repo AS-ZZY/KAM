@@ -1,0 +1,44 @@
+/* pages/login/login.wxss */
+page{
+  background-color: #FFA182;
+  background-image: url(http://47.101.182.211/src/static/logo1.png);
+  background-repeat:no-repeat; 
+  background-size: 700rpx 700rpx;
+  background-position-x: 100%;
+  background-position-y: 100%;
+}
+.logo{
+  margin: 100rpx auto;
+  color: white;
+  text-align: center;
+  font-size: 50rpx;
+}
+input{
+  background-color: #ead5cd;
+  float: left;
+  width: 60%;
+  height: 100rpx;
+  padding-left: 50rpx;
+  margin: 0 10% 10rpx 0;
+}
+.icons{
+  float: left;
+  width: 100rpx;
+  margin-left: 10%;
+  height: 75rpx;
+  text-align: center;
+  padding: 27rpx 0 0 0;
+  background-color: #f2dcd4;
+}
+.handle{
+  margin: 2% 10%;
+  border-radius: 10rpx;
+  background-color: rgba(135,206,250,0.4);
+}
+.find{
+  text-align:right;
+  color: white;
+  margin-right: 10%;
+}
+
+

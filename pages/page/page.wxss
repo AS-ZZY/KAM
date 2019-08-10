@@ -1,0 +1,89 @@
+/* pages/page/page.wxss */
+page{
+  padding-top: 12%;
+  background-color: #e0e6e3;
+}
+.header{
+  position: fixed;
+  top: 0;
+  width: 90%;
+  background-color: #e0e6e3;
+}
+.a{
+  margin: 0 5%;
+}
+.f{
+  float: left;
+  margin: 10rpx 0 0 10rpx;
+  height: 60rpx;
+}
+.left{
+  float: left;
+}
+.search{
+  background-color: #cacecc;
+  padding-left: 20rpx;
+  width: 60%
+}
+.last{
+  width: 20%;
+  text-align: center;
+  padding-top: 2%; 
+}
+.sort{
+  width: 100%;
+  height: 100rpx;
+  background: #eaf0ed;
+}
+.sortItem{
+  text-align: center;
+  padding-top: 25rpx;
+  height: 75rpx;
+  width: 40%;
+  margin: 0 5%;
+}
+.data{
+  height: 300rpx;
+  margin-bottom: 10rpx;
+  background-color: #ebebea;
+}
+.img{
+  margin: 10rpx 2%;
+  width: 30%;
+  height: 280rpx;
+}
+.right{
+  margin: 10rpx 2%;
+  height: 280rpx;
+  width: 60%;
+}
+.s{
+  float: right;
+}
+.text{
+  margin: 20rpx 10rpx;
+  color: #a9a342;
+}
+.ss{
+  margin: 6rpx;
+  word-wrap: break-word;
+}
+.pos{
+  position: absolute;
+  top: 70%;
+  left: 0%;
+}
+.ppp{
+  position: relative;
+}
+.pos2{
+  position: absolute;
+  top: 70%;
+  left: 60%;
+}
+.content{
+  width: 100%;
+  height: 55%;
+  word-break: break-all;
+  color: #9c9ea0;
+}

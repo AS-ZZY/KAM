@@ -1,0 +1,39 @@
+<i-message id="message" />
+<view class = "a">
+  <image class = "avatar" src = "{{url + apps.avatar}}" wx:if = "{{apps.avatar}}"/>
+  <text class = "appName">{{apps.username}}</text>
+</view>
+<view class = "a tagsArea">
+  标签管理:
+  <view 
+    class = "right"
+    catchtap = 'handleAddTag'>
+    添加标签
+  </view>
+  <view class = "area">
+    <view 
+      wx:for = "{{apps.tags}}" 
+      wx:key = "{{item}}" 
+      class = "tags"
+      catchtap = 'delTag'
+      data-index = "{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <view class = "right">
+    点击标签删除
+  </view>
+</view>
+<i-modal 
+  title="标题" 
+  visible="{{visible}}" 
+  bind:ok="addTag" 
+  bind:cancel="handleClose">
+    <input 
+      disabled='{{!visible}}'
+      value = "{{tag}}"
+      class = "a input" 
+      bindinput = "addValue"/>
+    <text>单个标签最多5个字</text>
+</i-modal>
+

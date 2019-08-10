@@ -1,0 +1,88 @@
+/* pages/show/show.wxss */
+page{
+  padding-bottom: 20%;
+}
+.title{
+  height: 450rpx;
+  text-align: center;
+}
+.text{
+  font-size: 50rpx;
+}
+.footer{
+  position: fixed;
+  left: 0%;
+  top: 90%;
+  width: 100%;
+  height: 10%;
+}
+.f{
+  float: left;
+}
+.ff{
+  text-align: center;
+  width: 40%;
+  height: 100%;
+  padding-top: 5%;
+  color: white;
+}
+.addComment{
+  text-align: center;
+  width: 20%;
+  padding-top: 2%;
+  background-color: white;
+}
+.addShoppingCart{
+  background-color: #5f8fbf;
+}
+.buy{
+  background-color: #6dcaa0;
+}
+.a{
+  margin: 5% 8% 0 8%;
+}
+.content{
+  color: #b5c0bb;
+  word-wrap: break-word;
+}
+.parting{
+  text-align: center;
+  word-wrap: break-word;
+}
+.left{
+  float: left;
+  color: red;
+  font-size: 40rpx;
+}
+.right{
+  float: right;
+  font-size: 40rpx;
+}
+.b{
+  height: 50rpx;
+}
+.commentContent{
+  color: #858a8e;
+  word-wrap: break-word;
+}
+.comment{
+  background-color: #deeefa;
+  margin: 5% auto;
+  width: 450rpx;
+  padding: 10rpx;
+  border: #858a8e solid 2rpx;
+  text-align: left;
+}
+.commentArea{
+  width: 100%
+}
+.tags{
+  border: 2rpx solid #b5c0bb;
+  background: #f7e4cf;
+  margin: 0 10rpx;
+  padding: 5rpx 15rpx;
+  border-radius: 20rpx;
+}
+.tagsArea{
+  height: 60rpx;
+}

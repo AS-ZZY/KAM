@@ -1,0 +1,90 @@
+/**index.wxss**/
+page{
+  background-color: #f0f2f5;
+}
+.slide-image{
+  width: 100%;
+}
+.swiper1{
+  width:100%;
+  height: 400rpx;
+}
+.searchInput{
+  float: left;
+  width: 70%;
+  height: 70rpx;
+  margin-top: 10rpx;
+}
+.icon{
+  float: left;
+  margin: 30rpx 5rpx 0 5rpx;
+}
+.title{
+  width: 100%;
+  margin: 0; 
+  padding: 0;
+  height: 100rpx;
+  background-color: #dcdee0;
+}
+.avatar{
+  display: block;
+  float: left;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  position: relative;
+  margin: 5rpx 20rpx 5rpx 20rpx;
+}
+.classificationImg{
+  width: 70%;
+  height: 50%;
+  margin: 10% 15%;
+  float: left;
+  display: block;
+}
+.classification{
+  width: 150rpx;
+  height: 200rpx;
+  float: left;
+}
+.classifications{
+  height: 200rpx;
+}
+.announcement{
+  border-radius: 35rpx;
+  margin-top: 20rpx;
+  background-color: #cea6ce;
+  padding: 30rpx 50rpx;
+  margin: 0 20rpx 0 20rpx;
+}
+.swiper2{
+  float: right;
+  width: 65%;
+  height: 40rpx;
+}
+.transition{
+  margin: 30rpx 0 10rpx 0;
+  text-align:center;
+}
+.recommend{
+  width: 45%;
+  height: 400rpx;
+  margin: 20rpx .5%;
+  float: left;
+  padding: 2%;
+  background-color: #f9fafb;
+}
+.recommendImg{
+  width: 94%;
+  height: 300rpx;
+  margin: 0 auto;
+}
+.recommendPrice{
+  color: red;
+  margin-top: 10rpx;
+}
+.titles{
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+}

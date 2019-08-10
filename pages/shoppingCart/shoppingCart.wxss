@@ -1,0 +1,76 @@
+/* pages/shoppingCart/shoppingCart.wxss */
+page{
+  background-color: #dee0e3;
+  padding-bottom: 100rpx;
+}
+.a{
+  margin: 30rpx 5%;
+  height: 250rpx;
+}
+.b{
+  margin: 30rpx;
+  height: 250rpx;
+}
+.check{
+  margin: 80rpx 0 0 0;
+}
+.left{
+  float: left;
+}
+.img{
+  height: 98%;
+  width: 200rpx;
+}
+.text{
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+.content{
+  margin: 20rpx;
+}
+.price{
+  position: absolute;
+  top: 80%;
+  left: 5%;
+}
+.box{
+  border: 2rpx solid black;
+  background: #d8d9da;
+  padding: 4rpx;
+  border-radius: 20rpx;
+}
+.info{
+  width: 100%;
+  height: 100%;
+}
+.footer{
+  position: fixed;
+  left: 0%;
+  top: 90%;
+  width: 100%;
+  height: 110rpx;
+  background-color: #cbc7cc;
+}
+.right{
+  background-color: #6dcaa0;
+  float: right;
+  width: 30%;
+  text-align: center;
+  line-height: 110rpx;
+}
+.del{
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  background-color: #d0907c;
+}
+.font{
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  color: red;
+}
+.ttt{
+  color: #909192;
+}

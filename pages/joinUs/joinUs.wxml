@@ -1,0 +1,45 @@
+<!--pages/joinUs/joinUs.wxml-->
+<i-message id="message" />
+<view class = "all whoami">
+  获取 wx.getUserInfo 接口后续将不再出现授权弹窗，请注意升级参考文档:https://developers.weixin.qq.com/blogd
+</view>
+<view class = "all" wx:for = "{{items}}" wx:key = "{{item}}">
+  <view class = "name">
+    <text style = "color: red">*</text>
+    {{item}}
+  </view>
+  <block wx:if = "{{item === '商品类别'}}">
+    <checkbox-group bindchange="checkboxChange">
+      <view class="checkbox" wx:for="{{categorys}}" wx:key = "{{item}}">
+        <checkbox value="{{item}}"/>{{item}}
+      </view>
+    </checkbox-group>
+  </block>
+  <block wx:elif = "{{item === '商品图'}}">
+    <block wx:if = "{{tempFilePaths}}">
+      <image class = "smallImg" src='{{tempFilePaths}}' bindtap='delImg' />
+      点击删除
+    </block>
+    <view class = "upload" bindtap = 'upload'>
+      <i-icon type="add" size = "20"/>
+      上传图片
+    </view>
+  </block>
+  <block wx:elif = "{{item === '商品描述'}}">
+    <view>最多140个字</view>
+    <textarea class = "aaa bbb" bindblur = 'inputChange' data-index = "{{index}}" auto-height />  
+  </block>
+  <block wx:elif = "{{item === '姓名' || item === '商品标题'}}">
+    <input class = "aaa" bindblur = 'inputChange' data-index = "{{index}}"/>
+  </block>
+  <block wx:else>
+    <input class = "aaa" type = "digit" bindblur = 'inputChange' data-index = "{{index}}"/>
+  </block>
+</view>
+<button 
+  class = "all" 
+  bindtap='handlein' 
+  disabled='{{ spinShow }}'
+  loading='{{ spinShow }}'>
+  提交
+</button>

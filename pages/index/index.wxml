@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<button wx:if = "{{!hasUserInfo && canIUse}}" open-type = "getUserInfo" bindgetuserinfo = "getUserInfo"> 
+  获取头像昵称 
+</button>
+<block wx:else>
+  <view class = "title">
+    <image 
+      class = "avatar"
+      src = "{{userInfo.avatarUrl}}" />
+    <icon class = "icon" type="search" size="16" color='black'/>
+    <input 
+      class = "searchInput"
+      placeholder='在这里输入想要寻找的内容'/>
+  </view>
+  <swiper 
+    class = "swiper1"
+    indicator-dots = "true" 
+    autoplay = "true" 
+    interval = "{{interval}}" 
+    duration = "{{duration}}"
+    circular = 'ture'>
+    <block wx:for="{{imgUrls}}" wx:key="item">
+      <swiper-item>
+        <image 
+          src="{{url + item}}" 
+          class="slide-image" 
+          mode = 'scaleToFill'/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class = "classifications">
+    <view 
+      wx:for = "{{classificationsImg}}" 
+      wx:key="item">
+      <view class = "classification" bindtap = "jumpTo2" data-id="{{index}}">
+        <image class = "classificationImg" src = "{{item}}"  mode = 'scaleToFill'/>
+        <view style='text-align: center'>{{classificationsText[index]}}</view>
+      </view>
+    </view>
+  </view>
+  <view class = "announcement">
+    <text class = "annText">Kam小公告：</text>
+    <swiper
+      class = "swiper2"
+      circular = 'ture'
+      duration = '500'
+      interval = '2000'
+      autoplay='true'>
+      <block wx:for = "{{announcements}}" wx:key = "index">
+        <swiper-item>
+          <text>{{item}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class = "transition">
+    <text>推荐</text>
+  </view>
+  <block wx:for = "{{commodityData}}" wx:key = "item._id">
+  <view class = "recommend" bindtap='jumpTo' data-id="{{item._id}}">
+      <image src = "{{url + item.img}}" class = "recommendImg"/>
+      <view class = "titles">
+        {{item.title}}
+      </view>
+      <view  class = "recommendPrice">
+        ￥{{item.price}}
+      </view>
+    </view>
+  </block>
+</block>

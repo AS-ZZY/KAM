@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/joinUs/joinUs",
+    "pages/shoppingCart/shoppingCart",
+    "pages/home/home",
+    "pages/show/show",
+    "pages/login/login",
+    "pages/findPassword/findPassword",
+    "pages/page/page",
+    "pages/management/management",
+    "pages/group/group",
+    "pages/allOrder/allOrder",
+    "pages/modify/modify"
+  ],
+  "tabBar": {
+    "backgroundColor": "#FFA182",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./img/index.png",
+        "selectedIconPath": "./img/index.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "iconPath": "./img/shoppingCart.png",
+        "selectedIconPath": "./img/shoppingCart.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "./img/home.png",
+        "selectedIconPath": "./img/home.png",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/joinUs/joinUs",
+        "iconPath": "./img/joinUs.png",
+        "selectedIconPath": "./img/joinUs.png",
+        "text": "加入我们"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFA182",
+    "navigationBarTitleText": "咕啾啾",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

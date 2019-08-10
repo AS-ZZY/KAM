@@ -1,0 +1,64 @@
+<!--pages/home/home.wxml-->
+<view class = "userInfo-area">
+  <view class = "avatar"> 
+    <image class = "userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" />
+  </view>
+  <view class = "names">
+    <view class = "userinfo-nickname">{{userInfo.nickName}}</view>
+    <view class = "userinfo-nickname" wx:if = "{{token}}" >{{app.username}}</view>
+  </view>
+  <view wx:if = "{{token}}" class = "tags">
+    <block wx:for="{{app.tags}}" wx:key="item">
+      <view 
+        class="i-tags" >
+        {{item}}
+      </view>
+    </block>
+  </view>
+</view>
+<button wx:if = "{{!token}}" class = "loginButton" bindtap="login">
+  绑定App账号
+</button>
+<block wx:else>
+<view>
+  <view class = "block">
+    <view class = "blockitem" wx:for="{{block}}" wx:key="item">
+      <view class = "blocktext">{{item}}</view>
+      <view 
+        style='color: red'
+        class = "blocktext">
+        {{app[blockInfo[index]]}}
+      </view>
+    </view>
+  </view>
+  <view 
+    class = "horizontal"
+    bindtap = 'click'
+    data-index = "{{'allOrder'}}">
+    <i-icon type="barrage" size = "28"/>
+    已发布
+    <view style = "float: right">
+      <i-icon type="enter" size = "26" color = "#ababab"/>
+    </view>
+  </view>
+  <view class = "order">
+    <view class = "orderItem" wx:for = "{{orderIcon}}" wx:key = "{{item}}">
+      <view>
+        <i-icon type = "{{item}}" size = "28"/>
+      </view>
+      {{orderInfo[index]}}
+    </view>
+  </view>
+  <view 
+    class = "horizontal" 
+    wx:for = "{{items}}" 
+    wx:key = "{{item}}"
+    bindtap = 'click'
+    data-index = "{{clickInfo[index]}}">
+    {{item}}
+    <view style = "float: right">
+      <i-icon type="enter" size = "26" color = "#ababab"/>
+    </view>
+  </view>
+</view>
+</block>

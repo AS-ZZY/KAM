@@ -1,0 +1,33 @@
+<i-message id="message" />
+<block wx:if = "{{info.length > 0}}">
+  <view class = "a" wx:for = "{{info}}" wx:key = "{{item._id}}">
+    <view class = "left imgArea">
+      <image class = "img" src = "{{url + item.img}}"/>
+    </view>
+    <view class = "left textArea">
+      <view class = "title r">
+        {{item.title}}
+      </view>
+      <view class = "r">
+        {{item.content}}
+      </view>
+      <view 
+        class = "left bu" 
+        catchtap = 'delCommodity'
+        data-id = "{{item._id}}"
+        data-index = "{{index}}">
+        删除
+      </view>
+      <view 
+        class = "left bu"
+        data-id = "{{item._id}}"
+        catchtap = 'modify'>
+        修改
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  暂无数据
+</block>
+
