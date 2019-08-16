@@ -12,7 +12,9 @@
     "pages/management/management",
     "pages/group/group",
     "pages/allOrder/allOrder",
-    "pages/modify/modify"
+    "pages/modify/modify",
+    "pages/pay1/pay1",
+    "pages/pay2/pay2"
   ],
   "tabBar": {
     "backgroundColor": "#FFA182",

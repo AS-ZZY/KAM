@@ -52,3 +52,7 @@ page{
   width: 400rpx;
   height: 400rpx;
 }
+.c{
+  text-align: center;
+  font-size: 50rpx;
+}

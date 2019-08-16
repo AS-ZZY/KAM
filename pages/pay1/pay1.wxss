@@ -1,0 +1,53 @@
+.title{
+  text-align: center;
+}
+.m{
+  margin: 3% 5%;
+}
+.img{
+  display: block;
+  margin: 0 auto;
+}
+.footer{
+  position: fixed;
+  left: 0%;
+  top: 90%;
+  width: 100%;
+  height: 10%;
+}
+.r{
+  color: red;
+}
+.right{
+  float: right;
+  width: 40%;
+  height: 100%;
+  background-color: #6dcaa0;
+  text-align: center;
+  line-height: 100rpx;
+}
+.left{
+  float: left;
+  margin: 30rpx 0 0 50rpx;
+}
+.main{
+  overflow: hidden;
+}
+.count{
+  float: left;
+  padding: 16px;
+}
+.rr{
+  padding: 16px;
+  float: right;
+  font-size: 40rpx;
+  color: #979795;
+}
+.ti{
+  font-size: 50rpx;
+  text-align: center;
+}
+.seller{
+  float: right;
+  color: #c2c2c1;
+}

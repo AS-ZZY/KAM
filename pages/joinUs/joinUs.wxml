@@ -1,7 +1,7 @@
 <!--pages/joinUs/joinUs.wxml-->
 <i-message id="message" />
-<view class = "all whoami">
-  获取 wx.getUserInfo 接口后续将不再出现授权弹窗，请注意升级参考文档:https://developers.weixin.qq.com/blogd
+<view class = "all whoami c">
+  欢迎加入我们呀
 </view>
 <view class = "all" wx:for = "{{items}}" wx:key = "{{item}}">
   <view class = "name">

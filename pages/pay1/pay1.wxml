@@ -1,0 +1,27 @@
+<block wx:if = "{{info.img}}">
+  <view class = "title m">确认订单</view>
+
+  <view class = "info">
+    <image src = "{{url + info.img}}" class = "img"></image>
+  </view>
+
+  <view class = "m ti">
+    {{info.title}}
+  </view>
+
+  <view class = "m main">
+      <view class = "count">
+          <i-input-number value="{{ value }}" min="1" max="{{ info.num }}"      bindchange="handleChange" />
+      </view>
+      <text class = "rr">库存：共{{info.num}}件</text>
+  </view>
+
+  <view class = "m seller">
+    买家：{{info.name}}
+  </view>
+
+  <view class = "footer">
+    <view class = "left">共<text class = "r">{{value}}</text>件总金额：<text class = "r">￥{{info.price * value}}</text></view>
+    <view class = "right" bindtap = "buy">购买</view>
+  </view>
+</block>

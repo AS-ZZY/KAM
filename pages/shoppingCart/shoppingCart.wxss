@@ -27,7 +27,7 @@ page{
   position: relative;
 }
 .content{
-  margin: 20rpx;
+  margin: 10rpx 20rpx;
 }
 .price{
   position: absolute;

@@ -1,0 +1,43 @@
+<!--pages/pay2/pay2.wxml-->
+<i-message id="message" />
+<view class="title m">
+  支付购买
+</view>
+<block wx:if = '{{ datas.length > 0 }}'>
+  
+  <block wx:for = "{{datas}}" wx:key = "{{item.id}}">
+    <view class = "m sss">
+      {{item.title}}
+      <text class = "num">*{{item.value}}</text>
+      <view class = "r">￥：{{item.value * item.price}}</view>
+    </view>
+  </block>
+
+  <view class = "m">
+    收货地址：
+    <view class = "S">{{addressS}}</view>
+  </view>
+
+  <view class = "m">
+    点击选择收货地址:
+    <block wx:for = "{{address}}" wx:key = "{{item}}">
+      <view class = "S address" data-item = "{{index}}" bindtap = "selectaddress">
+        {{item}}
+      </view>
+    </block>
+  </view>
+
+  <view class = "m add" bindtap = "addAddress">
+    <i-icon type="add"/>添加收货地址
+  </view>
+
+  <i-modal 
+    title = "添加收货地址："
+    visible = "{{ visibleAddress }}" 
+    bind:ok = "addNewAddres"
+    bind:cancel = "closeAddAddress">
+    <input
+      bindinput = "setAddress" 
+      disabled = "{{ !visibleAddress }}" />
+  </i-modal>
+</block>
