@@ -29,12 +29,14 @@
 </view>
 
 <i-action-sheet visible="{{ visible }}" actions="{{ actions1 }}" show-cancel bind:cancel="handleCancel" bind:click="handleClickItem" />
+
 <view class = "a header">
   <view class = "f">
     <i-icon type="search" size = "30" />
   </view> 
   <input 
     bindinput = "searchInput"
-    class = "f search"/>
-  <view class = "f last">{{classificationsText[textId]}}</view>
+    class = "f search" 
+    bindconfirm = "searchValue" />
+  <view class = "f last">{{textId}}</view>
 </view>

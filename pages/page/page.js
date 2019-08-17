@@ -30,6 +30,10 @@ Page({
       url: "../show/show?id=" + event.currentTarget.dataset.id
     });
   },
+
+  searchValue(e) {
+    this.getData(e.detail.value);
+  },
   
   getData(id) {
     let that = this;
@@ -38,7 +42,7 @@ Page({
       success(res) {
         if(res.data){
           that.setData({
-            id: id,
+            textId: id,
             classificationData: res.data,
             classificationData1: res.data
           })

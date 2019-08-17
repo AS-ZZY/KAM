@@ -7,11 +7,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    datas: [],
+    datas: [
+      /*{
+      value: 1,
+      price: 120,
+      title: "古风游戏双人壁纸，师徒/情缘/闺蜜等",
+      id: "5d539bd638e9fe52eba07d1e"
+    }*/
+    ],
     address: [],
     addressS: "*",
     visibleAddress: false,
-    newAddress: ""
+    newAddress: "",
+    money: 0
   },
 
   addAddress() {
@@ -66,7 +74,11 @@ Page({
     let that = this;
     const eventChannel = this.getOpenerEventChannel();
     eventChannel.on('acceptDataFromOpenerPage', function (data) {
-      that.setData({ datas: data })
+      console.log(data[1])
+      that.setData({ 
+        datas: data[1],
+        money: data[0]
+      })
     })
     try {
       var token = wx.getStorageSync('token')

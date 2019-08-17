@@ -9,9 +9,11 @@
     <view class = "m sss">
       {{item.title}}
       <text class = "num">*{{item.value}}</text>
-      <view class = "r">￥：{{item.value * item.price}}</view>
+      <view class = "r">￥：{{item.value}}*{{item.price}}</view>
     </view>
   </block>
+
+  <view class = "r m">共： ￥{{money}}</view>
 
   <view class = "m">
     收货地址：
@@ -21,7 +23,10 @@
   <view class = "m">
     点击选择收货地址:
     <block wx:for = "{{address}}" wx:key = "{{item}}">
-      <view class = "S address" data-item = "{{index}}" bindtap = "selectaddress">
+      <view 
+        class = "S address" 
+        data-item = "{{index}}" 
+        bindtap = "selectaddress">
         {{item}}
       </view>
     </block>
@@ -31,13 +36,18 @@
     <i-icon type="add"/>添加收货地址
   </view>
 
-  <i-modal 
-    title = "添加收货地址："
-    visible = "{{ visibleAddress }}" 
-    bind:ok = "addNewAddres"
-    bind:cancel = "closeAddAddress">
-    <input
-      bindinput = "setAddress" 
-      disabled = "{{ !visibleAddress }}" />
-  </i-modal>
+  <view class = "m add">
+    购买
+  </view>
+
 </block>
+
+<i-modal 
+  title = "添加收货地址："
+  visible = "{{ visibleAddress }}" 
+  bind:ok = "addNewAddres"
+  bind:cancel = "closeAddAddress">
+  <input
+    bindinput = "setAddress" 
+    disabled = "{{ !visibleAddress }}" />
+</i-modal>

@@ -3,6 +3,7 @@
 const app = getApp()
 
 Page({
+  seacrh: "",
   data: {
     url: "http://47.101.182.211/src/static/",
     userInfo: {},
@@ -31,10 +32,6 @@ Page({
       "还是想你",
       "(●'◡'●)"
     ],
-    recommendImg: [
-      "222.jpg", "333.jpg", "444.jpg",
-      "222.jpg", "333.jpg", "444.jpg"
-    ],
     commodityData: []
   },
   jumpTo: function(event){
@@ -43,9 +40,15 @@ Page({
     });
   },
   jumpTo2: function (event) {
+    this.jumpTo3(event.currentTarget.dataset.id);
+  },
+  jumpTo3(id) {
     wx.navigateTo({
-      url: "../page/page?id=" + event.currentTarget.dataset.id
+      url: "../page/page?id=" + id
     });
+  },
+  searchValue(e) {
+    this.jumpTo3(e.detail.value);
   },
 
   getData(num) {

@@ -86,6 +86,35 @@ Page({
       }
     })
   },
+
+  buy() {
+    let { selectItems, data, selectMoney } = this.data;
+    if(selectItems.length === 0){
+      return;
+    }
+    let d = [];
+    for(let i in selectItems){
+      let index = Number(i);
+      d.push({
+        value: 1,
+        price: data[index].price,
+        title: data[index].title,
+        id: data[index].id
+      })
+    }
+    wx.navigateTo({
+      url: "../pay2/pay2",
+      events: {
+        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+        acceptDataFromOpenedPage: function (data) {
+          console.log(data)
+        },
+      },
+      success: function (res) {
+        res.eventChannel.emit('acceptDataFromOpenerPage', [selectMoney, d])
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

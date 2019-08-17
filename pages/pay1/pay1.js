@@ -41,12 +41,12 @@ Page({
       },
       success: function (res) {
         // 通过eventChannel向被打开页面传送数据
-        res.eventChannel.emit('acceptDataFromOpenerPage', [{
+        res.eventChannel.emit('acceptDataFromOpenerPage', [Number(that.data.value) * Number(that.data.info.price) ,[{
           value: Number(that.data.value),
           price: Number(that.data.info.price),
           title: that.data.info.title,
           id: that.data.id
-        }])
+        }]])
       }
     })
   },

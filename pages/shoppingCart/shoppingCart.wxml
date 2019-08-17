@@ -27,7 +27,7 @@
   <view class = "footer">
     <view>
       <text class = "font">{{"￥：" + selectMoney}}</text>
-      <view class = "right">
+      <view class = "right" bindtap = "buy">
         购买全部
       </view>
   </view>

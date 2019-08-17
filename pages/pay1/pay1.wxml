@@ -17,7 +17,7 @@
   </view>
 
   <view class = "m seller">
-    买家：{{info.name}}
+    卖家：{{info.name}}
   </view>
 
   <view class = "footer">
