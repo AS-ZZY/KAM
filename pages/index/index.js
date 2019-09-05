@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   seacrh: "",
   data: {
-    url: "http://47.101.182.211/src/static/",
+    url: "",
     userInfo: {},
     hasUserInfo: false,
     imgUrls: [

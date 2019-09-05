@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    url: "http://47.101.182.211/src/static/",
+    url: "",
     id : "",
     info: {},
     value: 1

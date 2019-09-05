@@ -7,7 +7,7 @@ Page({
    */
   data: {
     id: "",
-    url: "http://47.101.182.211/src/static/",
+    url: "",
     info: {},
     visible: false,
     comment: ""

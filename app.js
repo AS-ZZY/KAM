@@ -51,8 +51,7 @@ App({
     wxUserInfo: {},
     userInfo: {},
     app: {},
-    //url: "http://127.0.0.1:3000/wx/",
-    url: "https://zzyblog.cn/wx/",
-    imgurl: "http://47.101.182.211/src/static/",
+    url: "http://127.0.0.1:3000/wx/",
+    imgurl: "",
   }
 })

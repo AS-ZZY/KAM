@@ -9,7 +9,7 @@ Page({
   data: {
     data: [],
     token: "",
-    url: "http://47.101.182.211/src/static/",
+    url: "",
     selectItems: [],
     selectMoney: 0,
   },

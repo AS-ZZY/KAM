@@ -10,7 +10,7 @@ Page({
       "啾画师", "啾手工娘", "啾摄影", "啾美工", "其他"
     ],
     visible: false,
-    url: "http://47.101.182.211/src/static/",
+    url: "",
     id: "",
     textId: 0,
     type:"",
