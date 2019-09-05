@@ -22,6 +22,6 @@
 
   <view class = "footer">
     <view class = "left">共<text class = "r">{{value}}</text>件总金额：<text class = "r">￥{{info.price * value}}</text></view>
-    <view class = "right" bindtap = "buy">购买</view>
+    <view class = "right" bindtap = "buy">支付定金</view>
   </view>
 </block>

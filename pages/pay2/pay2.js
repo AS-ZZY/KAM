@@ -7,23 +7,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    datas: [
-      /*{
-      value: 1,
-      price: 120,
-      title: "古风游戏双人壁纸，师徒/情缘/闺蜜等",
-      id: "5d539bd638e9fe52eba07d1e"
-    }*/
-    ],
+    datas: [],
     address: [],
     addressS: "*",
     visibleAddress: false,
     newAddress: "",
-    money: 0
+    money: 0,
+    phone: "",
+    addMessage: "",
+    confirmVis: false
+  },
+
+  confirm() {
+    let { addressS, phone } = this.data;
+    if(addressS === "*"){
+      $Message({
+        content: '请添加收货地址',
+        type: 'warning'
+      });
+      return;
+    }
+    if(phone.length !== 11){
+      $Message({
+        content: '请输入正确的手机号码',
+        type: 'warning'
+      });
+      return;
+    }
+    this.setData({ confirmVis: true })
   },
 
   addAddress() {
     this.setData({ visibleAddress: true })
+  },
+
+  closeConfirm() {
+    this.setData({ confirmVis: false })
   },
 
   closeAddAddress() {
@@ -34,37 +53,55 @@ Page({
     this.setData({ newAddress: e.detail.value })
   },
 
-  addNewAddres() {
+  inputPhone(e) {
+    this.setData({ phone: e.detail.value })
+  },
+
+  inputMessage(e) {
+    this.setData({ addMessage: e.detail.value })
+  },
+
+  addNewAddress() {
     let { newAddress, address } = this.data;
-    try {
-      let that = this;
-      let token = wx.getStorageSync('token')
-      wx.request({
-        url: app.globalData.url + 'addaddress',
-        method: "POST",
-        data: {
-          newAddress: newAddress
-        },
-        header: {
-          'content-type': 'application/json',
-          "token": token
-        },
-        success(res) {
-          if(res.data){
-            address.push(newAddress)
-            that.setData({ 
-              address: address,
-              visibleAddress: false })
+    if (newAddress){
+      try {
+        let that = this;
+        let token = wx.getStorageSync('token')
+        wx.request({
+          url: app.globalData.url + 'addaddress',
+          method: "POST",
+          data: {
+            newAddress: newAddress
+          },
+          header: {
+            'content-type': 'application/json',
+            "token": token
+          },
+          success(res) {
+            if (res.data) {
+              address.push(newAddress)
+              that.setData({
+                address: address,
+                visibleAddress: false
+              })
+            }
+            else {
+              $Message({
+                content: '失败 请重试',
+                type: 'error'
+              });
+            }
           }
-          else{
-            $Message({
-              content: '失败 请重试',
-              type: 'error'
-            });
-          }
-        }
-      })
-    } catch (e) {}
+        })
+      } catch (e) { }
+    }
+    else{
+      $Message({
+        content: '地址不能为空',
+        type: 'warning'
+      }); 
+    }
+    
   },
 
   /**
@@ -74,7 +111,6 @@ Page({
     let that = this;
     const eventChannel = this.getOpenerEventChannel();
     eventChannel.on('acceptDataFromOpenerPage', function (data) {
-      console.log(data[1])
       that.setData({ 
         datas: data[1],
         money: data[0]
@@ -92,14 +128,68 @@ Page({
           that.setData({address: res.data})
         }
       })
-    } catch (e) {
-      // Do something when catch error
-    }
+    } catch (e) {}
   },
 
   selectaddress(e) {
     let index = e.currentTarget.dataset.item;
     this.setData({ addressS: this.data.address[index] })
+  },
+
+  randomString() {
+    　　let len = 32;
+    　　let $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';   
+    　　let maxPos = $chars.length;
+    　　let pwd = '';
+    　　for (let i = 0; i < len; i++) {
+      　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+    　　}
+    　　return pwd;
+  },
+
+  getpackage(time) {
+    let that = this;
+    wx.request({
+      url: app.globalData.url + "getnotifyurl",
+      method: "POST",
+      header: {
+        'content-type': 'application/json',
+        "token": wx.getStorageSync('token')
+      },
+      data: {
+        money: this.data.money,
+        time: time
+      },
+      success: (res)=> {
+        if(res.data){
+          
+        }
+      }
+    })
+  },
+
+  confirmBuy() {
+  /*  let a = new Date();
+    let timestamp = Date.parse(a);
+    console.log(a.toString().split("G")[0])
+    let aa = this.randomString();
+    this.getpackage(a.toString().split("G")[0]);*/
+    $Message({
+      content: '请先绑定网页端账号',
+      type: 'warning'
+    });
+    return;
+/*    wx.requestPayment(
+      {
+        'timeStamp': (timestamp/1000).toString(),
+        'nonceStr': '',
+        'package': '',
+        'signType': 'MD5',
+        'paySign': '',
+        'success': function (res) { },
+        'fail': function (res) { },
+        'complete': function (res) { }
+      })*/
   },
 
   /**

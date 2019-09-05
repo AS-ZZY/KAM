@@ -7,17 +7,15 @@
     "pages/home/home",
     "pages/show/show",
     "pages/login/login",
-    "pages/findPassword/findPassword",
     "pages/page/page",
     "pages/management/management",
-    "pages/group/group",
     "pages/allOrder/allOrder",
     "pages/modify/modify",
     "pages/pay1/pay1",
     "pages/pay2/pay2"
   ],
   "tabBar": {
-    "backgroundColor": "#FFA182",
+    "backgroundColor": "#fed8c1",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -47,7 +45,7 @@
   },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FFA182",
+    "navigationBarBackgroundColor": "#fed8c1",
     "navigationBarTitleText": "咕啾啾",
     "navigationBarTextStyle": "black"
   },

@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    binding: false,
     userInfo: {},
     token: "",
     app: {},
@@ -30,7 +31,7 @@ Page({
         url: '../shoppingCart/shoppingCart'
       })
     }
-    else{
+    else if (index !== "group"){
       wx.navigateTo({ url: "../" + index + "/" + index });
     }
   },
@@ -38,33 +39,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    const that = this;
-    wx.getStorage({
-      key: 'token',
-      success: function (res) {
-        if(res.data){
-          that.setData({
-            token: res.data,
-            app: app.globalData.app,
-          })
-        }
-        else{
-          that.setData({ token: "" })
-        }
-      },
-      fail: function (res) {
-        that.setData({ token: "" })
-      }
-    });
   },
 
   /**
@@ -75,7 +55,9 @@ Page({
       var value = wx.getStorageSync('token')
       this.setData({
         token: value,
-        app: app.globalData.app
+        app: app.globalData.app,
+        userInfo: app.globalData.userInfo,
+        binding: app.globalData.binding
       })
     } catch (e) {
       

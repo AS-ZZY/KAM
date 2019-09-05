@@ -65,7 +65,6 @@ Page({
         }
       });
     } catch (e) {
-      console.log(1)
     }
   },
 
@@ -219,7 +218,6 @@ Page({
           }
         });
       } catch (e) {
-        console.log(1)
       }
     }
   },

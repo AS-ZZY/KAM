@@ -1,7 +1,7 @@
 <!--pages/pay2/pay2.wxml-->
 <i-message id="message" />
 <view class="title m">
-  支付购买
+  支付
 </view>
 <block wx:if = '{{ datas.length > 0 }}'>
   
@@ -14,6 +14,16 @@
   </block>
 
   <view class = "r m">共： ￥{{money}}</view>
+
+  <view class = "m">手机号码：</view>
+  <view>
+    <input type = "number" class= "in" bindinput = "inputPhone" />
+  </view>
+
+  <view class = "m">买家留言：</view>
+  <view>
+    <textarea class = "in" bindinput = "inputMessage" auto-height/>
+  </view>
 
   <view class = "m">
     收货地址：
@@ -36,8 +46,8 @@
     <i-icon type="add"/>添加收货地址
   </view>
 
-  <view class = "m add">
-    购买
+  <view class = "m add" bindtap = "confirm">
+    支付
   </view>
 
 </block>
@@ -45,9 +55,32 @@
 <i-modal 
   title = "添加收货地址："
   visible = "{{ visibleAddress }}" 
-  bind:ok = "addNewAddres"
+  bind:ok = "addNewAddress"
   bind:cancel = "closeAddAddress">
   <input
+    class = "in"
     bindinput = "setAddress" 
     disabled = "{{ !visibleAddress }}" />
+</i-modal>
+
+<i-modal 
+  title = "确认订单"
+  visible = "{{ confirmVis }}" 
+  bind:ok = "confirmBuy"
+  bind:cancel = "closeConfirm">
+  <view class = "con">
+    <block wx:for = "{{datas}}" wx:key = "{{item.id}}">
+      <view class = "m sss">
+        {{item.title}}
+        <text class = "num">*{{item.value}}</text>
+        <view class = "r">￥：{{item.value}}*{{item.price}}</view>
+      </view>
+    </block>
+    <view class = "r m">共： ￥{{money}}</view>
+    <view class = "m">手机号码：{{phone}}</view>
+    <block wx:if = "{{addMessage}}">
+      <view class = "m addc">买家留言：{{addMessage}}</view>
+    </block>
+    <view class = "m addc">地址：{{addressS}}</view>
+  </view>
 </i-modal>

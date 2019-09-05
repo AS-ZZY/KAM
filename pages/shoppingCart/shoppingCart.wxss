@@ -47,17 +47,18 @@ page{
 .footer{
   position: fixed;
   left: 0%;
-  top: 90%;
+  top: 92%;
   width: 100%;
-  height: 110rpx;
+  height: 8%;
   background-color: #cbc7cc;
 }
 .right{
   background-color: #6dcaa0;
   float: right;
   width: 30%;
+  height: 100%;
   text-align: center;
-  line-height: 110rpx;
+  line-height: 100rpx;
 }
 .del{
   position: absolute;
@@ -68,7 +69,7 @@ page{
 .font{
   position: absolute;
   left: 10%;
-  top: 20%;
+  top: 25%;
   color: red;
 }
 .ttt{

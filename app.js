@@ -33,18 +33,10 @@ App({
           method: "GET",
           header: this.globalData.header,
           success: res => {
-            if (res.data.ra) {
-              wx.setStorage({
-                key: "ra",
-                data: res.data.ra
-              });
-            }
-            else {
-              wx.setStorage({
-                key: "token",
-                data: res.data.token
-              });
+            if (res.data) {
+              wx.setStorageSync('token', res.data.token)
               this.globalData.app = res.data.info;
+              this.globalData.binding = res.data.binding;
             }
           }
         })
@@ -55,11 +47,12 @@ App({
 
 
   globalData: {
+    binding: false,
     wxUserInfo: {},
     userInfo: {},
     app: {},
-    url: "http://127.0.0.1:3000/wx/",
-    //url: "https://zzyblog.cn/wx/",
+    //url: "http://127.0.0.1:3000/wx/",
+    url: "https://zzyblog.cn/wx/",
     imgurl: "http://47.101.182.211/src/static/",
   }
 })

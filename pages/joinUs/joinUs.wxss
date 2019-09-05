@@ -1,11 +1,12 @@
 /* pages/joinUs/joinUs.wxss */
 page{
-  background-color: #FFA182;
-  background-image: url(http://47.101.182.211/src/static/logo1.png);
+  background-color: #fed8c1;
+  background-image: url(http://47.101.182.211/src/static/KAM.png);
   background-repeat:no-repeat; 
   background-size: 300rpx 300rpx;
   background-position-x: 50%;
   background-position-y: 0%; 
+  padding-bottom: 30rpx;
 }
 .all{
   margin: 0 10%;
@@ -55,4 +56,10 @@ page{
 .c{
   text-align: center;
   font-size: 50rpx;
+}
+input{
+  border-radius: 30rpx; 
+}
+textarea{
+  border-radius: 30rpx;
 }

@@ -16,7 +16,7 @@
   height: 10%;
 }
 .r{
-  color: red;
+  color: #f5bebf;
 }
 .right{
   float: right;

@@ -16,16 +16,12 @@
     </block>
   </view>
 </view>
-<button wx:if = "{{!token}}" class = "loginButton" bindtap="login">
-  绑定App账号
-</button>
-<block wx:else>
 <view>
   <view class = "block">
     <view class = "blockitem" wx:for="{{block}}" wx:key="item">
       <view class = "blocktext">{{item}}</view>
       <view 
-        style='color: red'
+        style='color: #f5bebf'
         class = "blocktext">
         {{app[blockInfo[index]]}}
       </view>
@@ -61,4 +57,6 @@
     </view>
   </view>
 </view>
-</block>
+<button wx:if = "{{!binding}}" class = "loginButton" bindtap="login">
+  绑定网页账号
+</button>

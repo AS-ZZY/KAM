@@ -15,7 +15,7 @@ Page({
   },
 
   checkboxChange: function (e) {
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    
   },
 
   change: function(){
@@ -24,11 +24,6 @@ Page({
    })
   },
 
-  findPassword: function() {
-    wx.navigateTo({
-      url: '../findPassword/findPassword',
-    })
-  },
   inputPassword: function(e) {
     this.setData({
       password: e.detail.value
@@ -47,8 +42,8 @@ Page({
     })
   },
   login: function() {
-    console.log(1)
     let { password, username, verification, remember } = this.data;
+    let token = wx.getStorageSync('token')
     if(password.length * username.length * verification.length !== 0){
       wx.request({
         method: "POST",
@@ -56,16 +51,16 @@ Page({
         data: {
           username: username,
           password: password,
-          ra: wx.getStorageSync('ra')
         },
-        header: app.globalData.header,
+        header: {
+          "token": token,
+          'content-type': 'application/json',
+        },
         success(res) {
           if(res.data){
             app.globalData.app = res.data.info;
-            wx.setStorage({
-              key: "token",
-              data: res.data.token
-            });
+            app.globalData.binding = res.data.binding;
+            wx.setStorageSync('token', res.data.token)
             wx.switchTab({
               url: '../home/home'
             });

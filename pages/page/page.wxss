@@ -66,6 +66,7 @@ page{
 }
 .ss{
   margin: 6rpx;
+  margin-top: 30rpx;
   word-wrap: break-word;
 }
 .pos{
@@ -86,4 +87,8 @@ page{
   height: 55%;
   word-break: break-all;
   color: #9c9ea0;
+}
+input{
+  border-radius: 30rpx;
+  padding-left: 30rpx;
 }

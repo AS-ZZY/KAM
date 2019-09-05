@@ -4,6 +4,7 @@
   <image class = "a title" src="{{url + info.img}}"/>
   <view class = "a text">{{info.title}}
   </view>
+  <view class = "a name">{{"卖家：" + info.name}}</view>
   <view class = "a b">
     <view class = "left">{{"￥" + info.price}}</view>
     <view class = "right">{{"分数：" + info.point}}</view>
@@ -37,10 +38,11 @@
       加入购物车
     </view>
     <view class = "f ff buy" bindtap = "buyNow">
-      立即购买
+      支付定金
     </view>
   </view>
 </block>
+
 <i-modal title="添加评论" visible="{{ visible }}" bind:ok="handleSubmit" bind:cancel="handleClose">
   <view class = "commentArea">
     <textarea class = "comment" auto-height = "true" bindinput = 'setComment' auto-focus = "true" value = "{{comment}}" disabled='{{!visible}}'/>

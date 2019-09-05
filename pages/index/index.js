@@ -9,10 +9,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     imgUrls: [
-      '2.jpg',
-      "1.png",
-      '4.jpg',
-      '3.jpg',
+      "2.png",
+      "3.png",
     ],
     interval: 2000,
     duration: 500,
@@ -27,9 +25,7 @@ Page({
       "啾画师","啾手工娘","啾摄影","啾美工","其他"
     ],
     announcements: [
-      "想你",
-      "想你",
-      "还是想你",
+      "欢迎来到KAM吖",
       "(●'◡'●)"
     ],
     commodityData: []
@@ -48,7 +44,9 @@ Page({
     });
   },
   searchValue(e) {
-    this.jumpTo3(e.detail.value);
+    if (e.detail.value){
+      this.jumpTo3(e.detail.value);
+    }
   },
 
   getData(num) {

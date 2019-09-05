@@ -28,7 +28,7 @@
     <view>
       <text class = "font">{{"￥：" + selectMoney}}</text>
       <view class = "right" bindtap = "buy">
-        购买全部
+        支付定金
       </view>
   </view>
   </view>

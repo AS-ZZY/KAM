@@ -56,7 +56,6 @@ Page({
     let id = e.currentTarget.dataset.id;
     let { selectItems, selectMoney, data } = this.data;
     if(selectItems.indexOf(index.toString()) >= 0){
-      console.log(1)
       selectMoney -= data[index].price
       selectItems.splice(selectItems.indexOf(index.toString()),1);
     }
@@ -90,6 +89,10 @@ Page({
   buy() {
     let { selectItems, data, selectMoney } = this.data;
     if(selectItems.length === 0){
+      $Message({
+        content: '请选中至少一件商品',
+        type: 'warning'
+      });
       return;
     }
     let d = [];
@@ -107,7 +110,6 @@ Page({
       events: {
         // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
         acceptDataFromOpenedPage: function (data) {
-          console.log(data)
         },
       },
       success: function (res) {

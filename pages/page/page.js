@@ -32,13 +32,19 @@ Page({
   },
 
   searchValue(e) {
-    this.getData(e.detail.value);
+    if (e.detail.value){
+      this.getData(e.detail.value);      
+    }
   },
   
   getData(id) {
     let that = this;
     wx.request({
-      url: app.globalData.url + "classification&class=" + id,
+      url: app.globalData.url + "classification",
+      method: "POST",
+      data: {
+        classes: id
+      },
       success(res) {
         if(res.data){
           that.setData({

@@ -4,18 +4,21 @@ page{
   padding-top: 10%;
 }
 .a{
-  margin: 0 15% 50rpx 15%;
-
+  margin: 0 15% 30rpx 15%;
+  overflow: hidden;
 }
 .avatar{
   border-radius: 50%;
   width: 100rpx;
   height: 100rpx;
+  font-size: 10px;
 }
 .appName{
-  font-size: 60rpx;
+  font-size: 20rpx;
   float: right;
   margin-top: 20rpx; 
+  width: 120rpx;
+  text-overflow:ellipsis;
 }
 .tags{
   float: left;

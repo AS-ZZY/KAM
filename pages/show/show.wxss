@@ -9,13 +9,6 @@ page{
 .text{
   font-size: 50rpx;
 }
-.footer{
-  position: fixed;
-  left: 0%;
-  top: 90%;
-  width: 100%;
-  height: 10%;
-}
 .f{
   float: left;
 }
@@ -51,7 +44,7 @@ page{
 }
 .left{
   float: left;
-  color: red;
+  color: #f5bebf;
   font-size: 40rpx;
 }
 .right{
@@ -63,6 +56,7 @@ page{
 }
 .commentContent{
   color: #858a8e;
+  padding-left: 30rpx;
   word-wrap: break-word;
 }
 .comment{
@@ -85,4 +79,14 @@ page{
 }
 .tagsArea{
   height: 60rpx;
+}
+.name{
+  color: #b5c0bb
+}
+.footer{
+  position: fixed;
+  left: 0%;
+  top: 90%;
+  width: 100%;
+  height: 10%;
 }

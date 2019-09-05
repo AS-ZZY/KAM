@@ -10,7 +10,7 @@ Page({
     url: "http://47.101.182.211/src/static/",
     info: {},
     visible: false,
-    comment: "",
+    comment: ""
   },
 
   /**
@@ -148,6 +148,7 @@ Page({
       });
     }
   },
+  
   buyNow() {
     let that = this;
     wx.navigateTo({
@@ -155,7 +156,6 @@ Page({
       events: {
         // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
         acceptDataFromOpenedPage: function (data) {
-          console.log(data)
         },
       },
       success: function (res) {
@@ -165,6 +165,8 @@ Page({
       }
     })
   },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

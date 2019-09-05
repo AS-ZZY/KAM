@@ -21,13 +21,14 @@
   line-height: 80rpx;
   border-radius: 30rpx;
 }
-input{
+.in{
   margin: 0 auto;
   background-color: #e6e6e5;
   width: 80%;
   height: 20%;
   display: block;
   padding: 10rpx;
+  border-radius: 30rpx;
 }
 .r{
   text-align: right;
@@ -37,5 +38,11 @@ input{
   float: right;
 }
 .sss{
+  word-wrap: break-word;
+}
+.con{
+  text-align: left
+}
+.addc{
   word-wrap: break-word;
 }
